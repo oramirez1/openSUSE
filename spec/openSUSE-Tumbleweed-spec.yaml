@@ -3,7 +3,7 @@
 ####################################################
 built: clib         # Required: Do not remove.
 machine:
-    item: openSUSE # Required: Source content library id OVF.
+    item: openSUSE-tumbleweed # Required: Source content library id OVF.
     name: openSUSE-Test06    # Required: Target virtual machine name.
     os: opensuse64Guest     # Required: Guest Operating System name or Id.
     folder: group-v9593     # Required: Folder name, path or ID.
