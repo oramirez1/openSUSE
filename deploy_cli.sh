@@ -2,7 +2,6 @@
 
 # Network: dvportgroup-545783, VL-0253-EIS-VSS-CGN
 # Folder:  group-v17904, ITS > HIG > Services > Dev
-#          group-v17903, ITS > HIG > Services > Prod
 
 vss-cli --wait compute vm mk from-clib \
 --memory 4 --cpu 2 \

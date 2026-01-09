@@ -33,7 +33,7 @@ All the above is defined in [spec](spec/openSUSE-Tumbleweed-spec.yaml).
 
 ## Cloud-Init
 
-The `cloud-init` folder stores two main files: ``network.yaml`` and ``userdata.yaml``. The ``userdata.yaml`` holds the main configuration that will be applied to the Ubuntu OS upon deployment.
+The `cloud-init` folder stores two main files: ``network.yaml`` and ``userdata.yaml``. The ``userdata.yaml`` holds the main configuration that will be applied to the openSUSE OS upon deployment.
 
 This example makes the following customizations to the OS:
 - Install packages defined in ``packages`` section.
@@ -53,7 +53,7 @@ The following sections are recommended to update:
 
 ### ITS Private Cloud CLI ``vss-cli`` spec
 
-1. Edit [spec](spec/ubuntu-landscape-spec.yaml) and update any settings that may apply to your Org unit, such as `folder`, `name`, `network` or any other item in the metadata section. Note that if you change the network to one that does not have DHCP enabled, ``cloud_init.network_data`` must be added
+1. Edit [spec](spec/openSUSE-Tumbleweed-spec.yaml) and update any settings that may apply to your Org unit, such as `folder`, `name`, `network` or any other item in the metadata section. Note that if you change the network to one that does not have DHCP enabled, ``cloud_init.network_data`` must be added
 2. Edit [user-data](cloud-init/userdata.yaml) and update recommended settings mentioned in the [#Cloud-Init](#cloud-init) section.
 3. (Optional) Edit [network-config](cloud-init/network.yaml) and update your networking settings based on the network selected in step 1 ([spec](spec/openSUSE-Tumbleweed-spec.yaml))
 4. Run the following command or execute ``sh deploy_spec.sh``:
