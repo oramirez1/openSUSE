@@ -1,0 +1,47 @@
+#cloud-config
+
+timezone: America/Toronto
+
+ntp:
+  enabled: true
+  ntp_client: ntp
+  servers:
+    - 0.pool.utoronto.ca
+    - 1.pool.utoronto.ca
+    - 2.pool.utoronto.ca
+
+packages:
+  - zypper
+  - open-vm-tools
+  - openssh
+users:
+  - name: root
+    passwd: <SETUP_PASSWD_WITH_MKPASSWD>
+    ssh_authorized_keys:
+      - ssh-rsa ...<SETUP_SSH_KEY>
+  - name: vss-admin
+    gecos: VSS Admin
+    sudo: ALL=(ALL) ALL
+    groups: users, admin
+    lock_passwd: false
+    shell: /bin/bash
+    passwd: <SETUP_PASSWORD_WITH_MKPASSWD>
+      - ssh-rsa ...<SETUP_SSH_KEY>
+
+runcmd:
+- zypper refresh
+- zypper update 
+
+package_update: true
+package_upgrade: true
+package_reboot_if_required: true
+power_state:
+  delay: now
+  mode: reboot
+  message: Rebooting the OS
+  condition: if [ -e /var/run/reboot-required ]; then exit 0; else exit 1; fi
+
+final_message: "The system is finally up, after $UPTIME seconds"
+
+fqdn: opensuse-cloud-test.eis.utoronto.ca
+hostname: opensuse-cloud-test
