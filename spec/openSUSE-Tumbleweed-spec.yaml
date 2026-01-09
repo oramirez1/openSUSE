@@ -1,9 +1,9 @@
-####################################################
-# VSS-CLI Config Spec for ContentLibrary deployment#
-####################################################
+#####################################################
+# VSS-CLI Config Spec for ContentLibrary deployment #
+#####################################################
 built: clib         # Required: Do not remove.
 machine:
-    item: openSUSE-tumbleweed # Required: Source content library id OVF.
+    item: openSUSE-tumbleweed # Required: Source content library id OVF: openSUSE-tumbleweed-cloudimg-x86_64
     name: openSUSE-Test06    # Required: Target virtual machine name.
     os: opensuse64Guest     # Required: Guest Operating System name or Id.
     folder: group-v9593     # Required: Folder name, path or ID.
